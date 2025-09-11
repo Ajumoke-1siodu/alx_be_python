@@ -1,5 +1,5 @@
 #prompt to input current age
-age1 = int(input("How od are you"))
+age1 = int(input("How od are you?"))
 
 #Calculating age in 2025
 age = age1 + 27
