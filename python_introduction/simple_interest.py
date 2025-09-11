@@ -1,6 +1,8 @@
-principal(P) = 1000($)
-rate(R)= 0.5(5%)
-time(T)= 3(years)
+# Simple Interest Calculation
 
-interest (P* R * T)
-    print(interest)
+P = 1000       # principal in dollars
+R = 0.05       # rate (5%)
+T = 3          # time in years
+
+interest = P * R * T
+print("Simple Interest:", interest)
