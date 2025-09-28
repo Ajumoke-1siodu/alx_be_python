@@ -1,41 +1,21 @@
-def display_menu():
-    print("--- Shopping List Manager ---")
-    print("1. Add an item")
-    print("2. Remove an item")
-    print("3. View shopping list")
-    print("4. Exit")
+from datetime import datetime, timedelta
 
 def main():
-    shopping_list = []
+        # Step 1: Show current date and time
+            current_date = datetime.now()
+                print("Current date and time:", current_date.strftime("%Y-%m-%d %H:%M:%S"))
 
-    while True:
-        display_menu()
-        choice = input("Choose an option (1-4): ")
+                    # Step 2: Ask user for number of days
+                        try:
+                                    days_to_add = int(input("Enter the number of days to add to the current date: "))
+                                        except ValueError:
+                                                    print("Invalid input. Please enter a number.")
+                                                            return
 
-        if choice == "1":
-            item = input("Enter the item to add: ")
-            shopping_list.append(item)
-            print(f"'{item}' has been added to your shopping list.")
-        elif choice == "2":
-            item = input("Enter the item to remove: ")
-            if item in shopping_list:
-                shopping_list.remove(item)
-                print(f"'{item}' has been removed from your shopping list.")
-            else:
-                print(f"'{item}' is not in the shopping list.")
-        elif choice == "3":
-            if shopping_list:
-                print("Your Shopping List:")
-                for i, item in enumerate(shopping_list, start=1):
-                    print(f"{i}. {item}")
-            else:
-                print("Your shopping list is empty.")
-        elif choice == "4":
-            print("Exiting Shopping List Manager. Goodbye!")
-            break
-        else:
-            print("Invalid choice, please select 1-4.")
+                                                            # Step 3: Calculate future date
+                                                                future_date = current_date + timedelta(days=days_to_add)
+                                                                    print("Future date:", future_date.strftime("%Y-%m-%d"))
 
-if __name__ == "__main__":
-    main()
+                                                                    if __name__ == "__main__":
+                                                                            main()
 
