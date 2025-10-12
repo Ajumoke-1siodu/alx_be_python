@@ -9,7 +9,13 @@ def main():
         sys.exit(1)
 
     command, *params = sys.argv[1].split(':')
-    amount = float(params[0]) if params else None
+    amount = none
+    if params and params[0]:
+        try:
+            amount = float(params[0])
+        except ValueError:
+            print("Amount must be a number.")
+            sys.exit(1)
 
     if command == "deposit" and amount is not None:
         account.deposit(amount)
@@ -18,7 +24,7 @@ def main():
                                                                         if account.withdraw(amount):
                                                                             print(f"Withdrew: ${amount}")
                                                                 
-     else:
+    else:
                                                                             print("Insufficient funds.")
                                                                         elif command == "display":
                                                                                                                                                 account.display_balance()
